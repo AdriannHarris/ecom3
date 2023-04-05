@@ -1,0 +1,64 @@
+*{
+    background-color: black;
+        margin:0;
+        padding:0;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
+    
+}
+
+#grid {
+    display: flex;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+    padding: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+  
+  }
+
+  li{
+    color: #fff;
+    text-align:center;
+    font-size: 10px;
+    font-style: italic;
+    padding:20px;
+    list-style: none;
+    
+  }
+
+  h2{
+    color: #fff;
+    text-align:center;
+    font-size: 10px;
+    font-style: italic;
+    
+  }
+
+  /* img{
+    max-width: 100%;
+    max-height: 100%;
+  } */
+
+  .car{
+max-width: 100%;
+  }
+  .crop {
+    height: 300px;
+    width: 400px;
+    overflow: hidden;
+   }
+   .crop img {
+    height: 300px;
+    width: 400px;
+   }
+  
+   
+  button{
+    text-align:center;
+    padding:5px;
+    margin-left: 40%;
+    font-style: white;
+  }
+  .description{
+    color: #fff;
+  }
