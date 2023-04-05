@@ -8,7 +8,7 @@ function Card ()  {
 const [cars, setCars] = useState ([
   {
     year: '2018',
-    make: 'Chaverolet',
+    make: 'Cheverolet',
     model: 'Camaro ZL1 1LE',
     price: '$57,998',
     image:'https://www.motortrend.com/uploads/sites/21/2020/01/002-2018-Chevy-Camaro-Street-Track-Car_1_1.jpg',

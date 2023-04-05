@@ -1,0 +1,74 @@
+[
+    {
+        "year":2018,
+        "make":"Cheverolet",
+        "model":"Camaro ZL1 1LE",
+        "price":57998
+    },
+    {
+        "year":2015,
+        "make":"Dodge",
+        "model":"Challenger",
+        "price":45695
+    },
+    {
+        "year":2015,
+        "make":"Ford",
+        "model":"Mustang GT",
+        "price":46430
+    },
+    {
+        "year":2020,
+        "make":"Lexus",
+        "model":"RC F 350",
+        "price":65925
+    },
+    {
+        "year":2017,
+        "make":"Mercedes",
+        "model":"Benz AMG",
+        "price":132195
+    },
+    {
+        "year":2018,
+        "make":"Toyota",
+        "model":"Camry SE",
+        "price":17594
+    },
+    {
+        "year":2007,
+        "make":"Ford",
+        "model":"Mustang GT",
+        "price":6400
+    },
+    {
+        "year":2016,
+        "make":"Audi",
+        "model":"R8 V10",
+        "price":158600
+    },
+    {
+        "year":2016,
+        "make":"Dodge",
+        "model":"Charger SRT 392",
+        "price":50995
+    },
+    {
+        "year":2022,
+        "make":"Kia",
+        "model":"K5 GT Line",
+        "price":28390
+    },
+    {
+        "year":2020,
+        "make":"Cheverolet",
+        "model":"Corvette Z06",
+        "price":60000
+    },
+    {
+        "year":2011,
+        "make":"Porsche",
+        "model":"Panamera GTS",
+        "price":17312
+    }
+]
