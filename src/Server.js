@@ -1,45 +1,54 @@
 const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
-const mysql = require('mysql');
+const mysql = require('mysql2');
 
 const app = express();
 
 app.use(cors());
 app.use(bodyParser.json());
 
-const connection = mysql.createConnection({
+const db = mysql.createConnection({
   host: 'localhost',
   user: 'root',
   password: 'password',
   database: 'ecomv2'
-});
+  ,});
 
-connection.connect((err) => {
-  if (err) {
-    console.error('Error connecting to database:', err);
-    return;
-  }
-  console.log('Connected to database.');
-});
-
-app.get('/api/cars', (req, res) => {
-  const searchQuery = req.query.searchQuery.toLowerCase();
-  const query = `
-    SELECT * FROM cars
-    WHERE make LIKE '%${searchQuery}%' OR model LIKE '%${searchQuery}%'
-  `;
-  connection.query(query, (error, results) => {
-    if (error) {
-      console.error('Error querying database:', error);
-      res.status(500).json({ error: 'Internal server error' });
+    db.connect(err =>{
+    if(err){
+      console.log(err.message)
       return;
-    }
-    res.json(results);
-  });
+  }
+  console.log("Connected to MySQL database")
 });
 
-const port = process.env.PORT || 3001;
-app.listen(port, () => {
-  console.log(`Server listening on ${port}.`);
+app.get("/products", (req, res) => {
+  const q = "SELECT * FROM ecomv2";
+  db.query(q, (err, data) => {
+   if (err) {
+    console.log(err);
+    return res.json(err);
+   }
+   return res.json(data);
+  });
+ });
+
+//  app.post("/products", (req, res) => {
+//   const q = "INSERT INTO products(`product_title`, `product_description`, `product_price`, `product_image`) VALUES (?)";
+ 
+//  const values = [
+//   req.body.product_title,
+//   req.body.product_price,
+//   req.body.product_description,
+//   req.body.product_image,
+//  ];
+
+//  db.query(q, [values], (err, data) => {
+//   if (err) return res.send(err);
+//   return res.json(data);
+//  });
+// });
+app.listen(3001, () => {
+ console.log("Connected to backend.");
 });
