@@ -4,7 +4,7 @@ function Contact() {
   return (
     <section id="contact">
       <div className="content">
-        <h2></h2>
+        
         <p>Leave us a review and tell us what you thought!</p>
       </div>
       <div className="container">

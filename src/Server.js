@@ -1,28 +1,45 @@
 const express = require('express');
 const cors = require('cors');
-const mysql= require('mysql2');
+const bodyParser = require('body-parser');
+const mysql = require('mysql');
+
 const app = express();
 
-const cars = [{model, year, make, price}];
-let state = {
-  filteredCars: cars,
-};
+app.use(cors());
+app.use(bodyParser.json());
 
-app.get('/cars', (req, res) => {
-  res.json(state.filteredCars);
+const connection = mysql.createConnection({
+  host: 'localhost',
+  user: 'root',
+  password: 'password',
+  database: 'ecomv2'
 });
 
-app.post('/filter', (req, res) => {
-  const searchQuery = req.body.searchQuery.toLowerCase();
-  const filteredCars = cars.filter(car => {
-    const make = car.make.toLowerCase();
-    const model = car.model.toLowerCase();
-    return make.includes(searchQuery) || model.includes(searchQuery);
+connection.connect((err) => {
+  if (err) {
+    console.error('Error connecting to database:', err);
+    return;
+  }
+  console.log('Connected to database.');
+});
+
+app.get('/api/cars', (req, res) => {
+  const searchQuery = req.query.searchQuery.toLowerCase();
+  const query = `
+    SELECT * FROM cars
+    WHERE make LIKE '%${searchQuery}%' OR model LIKE '%${searchQuery}%'
+  `;
+  connection.query(query, (error, results) => {
+    if (error) {
+      console.error('Error querying database:', error);
+      res.status(500).json({ error: 'Internal server error' });
+      return;
+    }
+    res.json(results);
   });
-  state = {
-    ...state,
-    filteredCars: filteredCars,
-  };
-  res.sendStatus(200);
 });
 
+const port = process.env.PORT || 3001;
+app.listen(port, () => {
+  console.log(`Server listening on ${port}.`);
+});

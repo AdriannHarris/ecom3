@@ -16,3 +16,4 @@ function Car ({year, make, model, price, image, description, onReserve}){
 }
 
 export default Car;
+

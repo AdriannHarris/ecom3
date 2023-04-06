@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Car from '../components/Car';
+import Car from "../components/Car";
 import './car.css'
 
 function Card ()  {
@@ -7,6 +7,7 @@ function Card ()  {
 
 const [cars, setCars] = useState ([
   {
+    category: 'Coupe',
     year: '2018',
     make: 'Cheverolet',
     model: 'Camaro ZL1 1LE',
@@ -16,6 +17,7 @@ const [cars, setCars] = useState ([
     
   },
   {
+    category: 'Coupe',
     year: '2015',
     make: 'Dodge',
     model: 'Challenger',
@@ -24,6 +26,7 @@ const [cars, setCars] = useState ([
     description: 'This 8 speed automatic that weighs 4,478 lbs, you get 475 rpm torque, has black hybrid interior which is a mix of leather and suede with SRT stitched in the seats, with a black glossy exterior and 20" inch aluminum wheels.',
   },
   {
+    category: 'Coupe',
     year: '2015',
     make: 'Ford',
     model: 'Mustang GT',
@@ -32,6 +35,7 @@ const [cars, setCars] = useState ([
     description:'This rear wheel drive 6 speed manual has 435 horsepower, cooled and heated seats, navigation screen, with a all bright blue exterior, and an all black interior with a large spoiler.',
   },
   {
+    category: 'Coupe',
     year: '2020',
     make: 'Lexus',
     model: 'RC F 350',
@@ -40,6 +44,7 @@ const [cars, setCars] = useState ([
     description: 'This luxury style sports coupe features plenty of cabin room, 472 horsepower, 395 lb torque, with an all black interior and silver exterior.',
   },
   {
+    category: 'Sedan',
     year: '2017',
     make: 'Mercedes',
     model: 'Benz AMG',
@@ -48,6 +53,7 @@ const [cars, setCars] = useState ([
     description: 'This twin turbo RWD v8 engine vehicle includes 503 horsepower, 479 maximum torque, 7 speed transmission, black interior with a large navigation screen, and dark silver exterior.',
   },
   {
+    category: 'Sedan',
     year: '2018',
     make: 'Toyota',
     model: 'Camry SE',
@@ -56,6 +62,7 @@ const [cars, setCars] = useState ([
     description: 'This 8 speed automatic FWD vehicle includes 203 horsepower, 184lb torque, 4 cylinders, and low rac car driver seats.',
   },
   {
+    category: 'Coupe',
     year: '2007',
     make: 'Ford',
     model: 'Mustang GT',
@@ -64,6 +71,7 @@ const [cars, setCars] = useState ([
     description: 'This fifth generatio v8 vintage coupe includes 300 horsepower, 320lb torque, suspension coiling springs, and spectator goggle headlights.',
   },
   {
+    category: 'Coupe',
     year: '2016',
     make: 'Audi',
     model: 'R8 V10',
@@ -72,6 +80,7 @@ const [cars, setCars] = useState ([
     description: 'This standard 5.2 liter v10 model gets 540 horsepower, 398lb torque, a 7 speed wet dual clutch automatic, three different modes,and a variety of colors.',
   },
   {
+    category: 'Sedan',
     year: '2016',
     make: 'Dodge',
     model: 'Charger 392 SRT',
@@ -80,6 +89,7 @@ const [cars, setCars] = useState ([
     description: 'his incredible 8 speed RWD automatic sedan includes 485 horsepower, 475lb torque, overhead valve cams, custom srt stitched seats, with a large cabin and a variety of colors.',
   },
   {
+    category: 'Sedan',
     year: '2022',
     make:'Kia',
     model: 'K5 GT Line',
@@ -88,6 +98,7 @@ const [cars, setCars] = useState ([
     description: 'This 1.6 turbocharged 8 speed automatic vehicle includes three different drive modes,GT line body styling, 10.25 touchscreen display, blind spot detection tech, and comes in a variety of colors.',
   },
   {
+    category: 'Coupe',
     year: '2020',
     make: 'Cheverolet',
     model: 'Corvette Z06',
@@ -96,6 +107,7 @@ const [cars, setCars] = useState ([
     description: 'This 5.5 liter v8 RWD luxury sport coupe includes 8 speed dual clutch, 670 horsepower, 470lb torque, and a sleek sporty silhouette.',
   },
   {
+    category: 'Sedan',
     year: '2011',
     make: 'Porsche',
     model: 'Panamera GTS',
@@ -104,6 +116,7 @@ const [cars, setCars] = useState ([
     description: 'This v8 4.8 liter AWD drive vehicle includes 430 horsepower, with a maximum of 384lbs,a sporty silhouette, and premium interior.',
   }
 ]);
+
 const [filteredCars, setFilteredCars] = useState(cars);
 
 const handleFilter = (event) => {
